@@ -1,5 +1,14 @@
 @import "tailwindcss";
-@import "tw-animate-css";
+/* @import "tw-animate-css"; */
+/*
+  The `tw-animate-css` package is not installed in this repo which causes
+  build time resolution errors. If you need the animations provided by that
+  package, install it with:
+
+    npm install tw-animate-css
+
+  Otherwise leaving this import commented out prevents the resolver error.
+*/
 @plugin "@tailwindcss/forms";
 @variant dark (&:where(.dark, .dark *));
 
