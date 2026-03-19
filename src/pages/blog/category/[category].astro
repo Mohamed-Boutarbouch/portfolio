@@ -35,7 +35,7 @@ const meta = getCategoryMeta(category);
         <h1 class="text-3xl font-bold">{meta.title}</h1>
         <a class="sw-btn-sm" href={`/rss/category/${category}.xml`}>Subscribe</a>
       </div>
-      <p class="text-[color:var(--color-text-muted)]">{meta.description}</p>
+      <p class="text-lg text-(--color-text-muted)">{meta.description}</p>
       <div class="blog-grid">
         {posts.map((p) => (
           <PostCard post={p} />

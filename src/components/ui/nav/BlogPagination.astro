@@ -17,7 +17,7 @@ const nextHref = currentPage < totalPages ? `${basePath}/${currentPage + 1}/` : 
     ) : (
       <span class="sw-btn" style="opacity:.5; pointer-events:none;">Previous</span>
     )}
-    <span class="text-sm text-[color:var(--color-text-muted)]">
+    <span class="text-sm text-(--color-text-muted)">
       Page {currentPage} of {totalPages}
     </span>
     {nextHref ? (
