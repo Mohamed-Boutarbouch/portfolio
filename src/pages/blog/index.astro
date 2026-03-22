@@ -1,5 +1,5 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/sections/Footer.astro';
 import Header from '../../components/sections/Header.astro';
@@ -17,7 +17,6 @@ const firstPagePosts = rest.slice(0, PAGE_SIZE);
 const totalPages = Math.max(1, Math.ceil(rest.length / PAGE_SIZE));
 let featuredReading = 0;
 if (featured) {
-  const { Content } = await render(featured);
   const html = await Astro.slots.render('default');
   featuredReading = calculateReadingTimeFromHtml(html ?? '');
 }
@@ -25,25 +24,25 @@ if (featured) {
 
 <!doctype html>
 <html lang="en" data-theme="dark" class="dark">
-	<head>
+  <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     {totalPages > 1 && (
-      <link rel="next" href={`/blog/page/2/`} />
+    <link rel="next" href={`/blog/page/2/`} />
     )}
-	</head>
-	<body>
-        <Header />
-        <BlogHero title="Blog" subtitle="Practical insights on data analysis, visualization, and getting more from your analytics tools." />
-        <main class="use-utility-layout mx-auto max-w-5xl px-3 py-5 space-y-7">
-            {featured && (
-              <section class="card-surface p-4 md:p-5 hover-lift sw-featured-card">
-                <FeaturedPost post={featured} readingTimeMin={featuredReading} />
-              </section>
-            )}
+  </head>
+  <body>
+    <Header />
+    <BlogHero title="Blog" subtitle="Practical insights on data analysis, visualization, and getting more from your analytics tools." />
+    <main class="use-utility-layout mx-auto max-w-5xl px-3 py-5 space-y-7">
+      {featured && (
+      <section class="card-surface p-4 md:p-5 hover-lift sw-featured-card">
+        <FeaturedPost post={featured} readingTimeMin={featuredReading} />
+      </section>
+      )}
 
-            <BlogAllArticles posts={firstPagePosts} />
-            <BlogPagination currentPage={1} totalPages={totalPages} />
-        </main>
-        <Footer />
-	</body>
+      <BlogAllArticles posts={firstPagePosts} />
+      <BlogPagination currentPage={1} totalPages={totalPages} />
+    </main>
+    <Footer />
+  </body>
 </html>
