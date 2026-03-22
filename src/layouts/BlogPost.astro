@@ -123,7 +123,7 @@ const { title, description, pubDate, updatedDate, heroImage, showHeader = true, 
                         </div>
                     )}
                     <ShareButtons title={title} url={Astro.url.toString()} />
-					<PostMeta pubDate={pubDate} readingTimeMin={readingTimeMin} authorName={Astro.props.author || 'Site Author'} />
+					          <PostMeta pubDate={pubDate} readingTimeMin={readingTimeMin} authorName={Astro.props.author || 'Site Author'} />
                     <slot />
                     <PostNav prev={prevPost} next={nextPost} />
                 </div>
