@@ -40,4 +40,3 @@ export function getCategoryMeta(slugOrName: string): CategoryMeta {
 }
 
 export function slugifyCategory(name: string): string { return toSlug(name); }
-

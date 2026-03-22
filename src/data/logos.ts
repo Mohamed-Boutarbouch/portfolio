@@ -30,5 +30,3 @@ export const logos: LogoItem[] = Object.entries(modules)
   .sort((a, b) => a.name.localeCompare(b.name));
 
 export type { LogoItem };
-
-
