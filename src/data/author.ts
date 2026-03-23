@@ -1,4 +1,4 @@
-import avatar from '../assets/images/sample-avatar.jpg';
+import avatar from '../assets/images/sample-avatar.png';
 
 export const author = {
   name: 'Mohammed Boutarbouch',
